@@ -8,10 +8,10 @@ class TreeNode:
 class BinaryTree:
     def __init__(self,root_value):
         self.root = TreeNode(root_value)
-
+    #獲取根節點
     def get_root(self):
         return self.root
-
+    #插入節點
     def insert(self,value):
         self._insert_recursive(self.root,value)
 
@@ -26,7 +26,7 @@ class BinaryTree:
                 current_node.right = TreeNode(value)
             else:
                 self._insert_recursive(current_node.right,value)
-
+    #搜尋節點
     def search(self,value):
         return self._search_recursive(self.root,value)
 
@@ -36,6 +36,7 @@ class BinaryTree:
         if value<current_node.value:
             return self._search_recursive(current_node.left,value)
         return self._search_recursive(current_node.right,value)
+    #打印
     def display_tree(self):
         self._display_tree_recursive(self.root,0)
 
